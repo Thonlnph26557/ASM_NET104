@@ -1,4 +1,5 @@
-﻿using ASM.VIEW.Models;
+﻿using ASM.MVC.Services;
+using ASM.VIEW.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,15 +8,17 @@ namespace ASM.VIEW.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        ProductServices _svProduct;
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            _svProduct = new ProductServices();
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var list = await _svProduct.GetAllAsync();
+            return View(list);
         }
 
         public IActionResult Privacy()

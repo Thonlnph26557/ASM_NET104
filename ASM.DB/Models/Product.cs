@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace ASM.DB.Models
 {
@@ -8,8 +9,10 @@ namespace ASM.DB.Models
         [DisplayName("Tên")]
         public string Name { get; set; }
         [DisplayName("Giá bán")]
+        [Range(1.0000000000001, int.MaxValue, ErrorMessage = "Giá bán phải lớn hơn 1")]
         public double Price { get; set; }
         [DisplayName("Số lượng tồn")]
+        [Range(2, int.MaxValue, ErrorMessage ="Số lượng phải lớn hơn 1")]
         public int AvaiableQuantity { get; set; }
         [DisplayName("Trạng thái")]
         public int Status { get; set; }
