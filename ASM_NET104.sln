@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASM.VIEW", "ASM.VIEW\ASM.VIEW.csproj", "{B1B034D2-EA4A-47B6-A38F-AD02E1C10045}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASM.DB", "ASM.DB\ASM.DB.csproj", "{627E7FEF-33AB-4ED2-8CB8-5764535E52CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1B034D2-EA4A-47B6-A38F-AD02E1C10045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1B034D2-EA4A-47B6-A38F-AD02E1C10045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1B034D2-EA4A-47B6-A38F-AD02E1C10045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1B034D2-EA4A-47B6-A38F-AD02E1C10045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{627E7FEF-33AB-4ED2-8CB8-5764535E52CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{627E7FEF-33AB-4ED2-8CB8-5764535E52CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{627E7FEF-33AB-4ED2-8CB8-5764535E52CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{627E7FEF-33AB-4ED2-8CB8-5764535E52CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E59C3E26-8BC0-4C0F-A3A5-015F7AEEAF76}
+	EndGlobalSection
+EndGlobal

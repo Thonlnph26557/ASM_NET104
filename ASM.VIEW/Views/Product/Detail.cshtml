@@ -1,0 +1,32 @@
+﻿@model ASM.DB.Models.Product
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+    Layout = "_ASMLayout";
+}
+
+<div style="border: 2px solid rgba(240, 240, 240, 0.9); border-radius: 5px;" class="m-3 p-3">
+    <h4>Chi tiết sản phẩm</h4>
+
+    <hr />
+
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="col">
+            <p>
+                <b>Tên: </b>@Model.Name
+            </p>
+            <p>
+                <b>Giá bán: </b><u style="color: red;">@Model.Price đ</u>
+            </p>
+            <p>
+                <b>Số lượng tồn: </b>@Model.AvaiableQuantity
+            </p>
+            <p>
+                <b>Mô tả: </b> <br />
+                @Model.Description
+            </p>
+        </div>
+    </div>
+    
+</div>

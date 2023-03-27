@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ASM.DB.Models.Product>
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+    Layout = "_ASMLayout";
+}
+
+<style>
+    #hover_ef:hover {
+        background-color: rgba(240, 240, 240, 0.9);
+    }
+    .rounded-button {
+        border:none;
+        background-color: rgba(240, 240, 240, 0.9);
+        border-radius: 50%;
+    }
+    .rounded-button:hover {
+        outline: 1px solid black;
+    }
+</style>
+
+<div style="border: 2px solid rgba(240, 240, 240, 0.9); border-radius: 5px;" class="m-3 p-3">
+    <div>
+        <h4 class="float-start">Danh sách sản phẩm</h4>
+        <button class="btn btn-primary float-end" onclick="location.href='@Url.Action("Add", "Product")'">Thêm</button>
+    </div>
+    <div style="clear:both;"></div>
+
+    <hr />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>@Html.DisplayNameFor(x => x.Name)</th>
+                <th>@Html.DisplayNameFor(x => x.Price)</th>
+                <th>@Html.DisplayNameFor(x => x.AvaiableQuantity)</th>
+                <th>@Html.DisplayNameFor(x => x.Description)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Select((item, index) => new { item, index }))
+            {
+                <tr id="hover_ef" class="align-middle">
+                    <td>
+                        @(item.index + 1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.item.AvaiableQuantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.item.Description)
+                    </td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="rounded-button" data-bs-toggle="dropdown">
+                                <i class="bi bi-three-dots-vertical" style="color: black;"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item align-middle" onclick="location.href='@Url.Action("Detail", "Product", new {id = item.item.Id})'">
+                                    <i class="bi bi-box-arrow-in-right me-2"></i>Chi tiết
+                                </a>
+                                <a class="dropdown-item align-middle" onclick="location.href='@Url.Action("Remove", "Product", new {id = item.item.Id})'">
+                                    <i class="bi bi-trash me-2"></i>Xóa
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
